@@ -1,0 +1,4 @@
+.element__box{
+    display: grid;
+    align-content: space-between;
+}

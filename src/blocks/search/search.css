@@ -1,0 +1,23 @@
+.search {
+    box-sizing: border-box;
+    position: relative;
+    margin: 70px 0 10px;
+    max-height: 73px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:"form";
+    column-gap: 30px;
+    border-radius: 10px;
+    background-color: gainsboro;
+}
+
+.search:before {
+    position: absolute;
+    content: '';
+    top: 70px;
+    left: 0;
+    margin-bottom: 80px;
+    height: 1px;
+    width: 100%;
+    background-color: #888eca;
+}

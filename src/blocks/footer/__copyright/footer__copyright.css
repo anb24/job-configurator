@@ -1,0 +1,10 @@
+.footer__copyright {
+    margin: 0;
+    padding-right: 48px;
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    cursor: default;
+    color: gainsboro;
+}

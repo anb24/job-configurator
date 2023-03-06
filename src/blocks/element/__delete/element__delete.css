@@ -1,0 +1,22 @@
+.element__delete {
+    border: none;
+    background-color: #888eca;
+    height: 30px;
+    width: 95px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 1px 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 900;
+    color: #261349;
+}
+
+.element__delete:hover {
+    filter: brightness(140%);
+    transition: all .6s;
+}

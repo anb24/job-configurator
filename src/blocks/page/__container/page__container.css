@@ -1,0 +1,11 @@
+.page__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    min-width: 320px;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    text-rendering: optimizeLegibility;
+}

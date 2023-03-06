@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Конфигуратор</title>
+    <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body class="page">
+    <div class="page__container">
+        <header class="header">
+            <h1 class="header__title">Конфигуратор должностей</h1>
+        </header>
+        <main class="content">
+            <section class="search">
+                <form action="" class="search__form">
+                    <div class="search__input-wrapper">
+                        <input type="text" placeholder="Введите должность" class="search__input"/>
+                        <button class="search__button"><img src="./images/search_img.svg" alt="ПОИСК" class="search__img"/></button>
+                    </div>
+                </form>
+            </section>
+            <section class="list"></section>
+        </main>
+        <footer class="footer">
+            <a href="https://github.com/anb24" target="_blank" class="footer__link">Мой GitHub</a>
+            <p class="footer__copyright">&copy; 2023. Андрей Багин</p>
+        </footer>
+    </div>
+    <template id="list-template">
+        <article class="element">
+            <div class="element__box">
+                <h2 class="element__title"></h2>
+                <div class="element__group">
+                    <input type="number" placeholder="Укажите з/п" class="element__salary"/>
+                    <p class="element__coin">&#8381</p>
+                </div>
+            </div>
+            <button type="button" class="element__delete" aria-label="Удалить">Удалить</button>
+            <button type="button" class="element__save" aria-label="Сохранить изменения">Сохранить</button>
+        </article>
+    </template>
+    <script type="module" src="./pages/index.js"></script>
+</body>
+</html>

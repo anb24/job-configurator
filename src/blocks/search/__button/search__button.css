@@ -1,0 +1,16 @@
+.search__button {
+    width: 30px;
+    height: 30px;
+    justify-self: right;
+    background-color: #888eca;
+    border: none;
+    border-radius: 30%;
+    cursor: pointer;
+    transition: all .5s;
+    padding: 1px;
+}
+
+.search__button:hover {
+    filter: brightness(140%);
+    transition: all .6s;
+}
