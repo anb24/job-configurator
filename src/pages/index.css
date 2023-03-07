@@ -14,6 +14,10 @@
 @import url(../blocks/search/__input/search__input.css);
 @import url(../blocks/search/__button/search__button.css);
 @import url(../blocks/search/__img/search__img.css);
+@import url(../blocks/search/__options/search__options.css);
+@import url(../blocks/search/__options/_show/search__options_show.css);
+@import url(../blocks/search/__options/_value/search__options_value.css);
+@import url(../blocks/search/__hl/search__hl.css);
 
 @import url(../blocks/list/list.css);
 @import url(../blocks/element/element.css);

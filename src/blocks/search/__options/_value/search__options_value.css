@@ -1,0 +1,8 @@
+.search__options_value{
+    list-style: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
+    margin-right: 10px;
+    padding: 6px;
+    text-transform: capitalize;
+    cursor: pointer;
+}

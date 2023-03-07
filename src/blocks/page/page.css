@@ -6,3 +6,24 @@ html{
     background-color: darkgray;
     height: 100%;
 }
+
+.page::-webkit-scrollbar{
+    width: 10px;
+}
+.page::-webkit-scrollbar-thumb{
+    border-width:1px 1px 1px 2px;
+    border-radius: 5px;
+    border-color: darkgray;
+    background-color: #888eca;
+}
+.page::-webkit-scrollbar-thumb:hover{
+    border-width: 1px 1px 1px 2px;
+    border-color: darkgray;
+    background-color: #777;
+}
+.page::-webkit-scrollbar-track{
+    border-width:0;
+}
+.page::-webkit-scrollbar-track:hover{
+    background-color: darkgray;
+}
