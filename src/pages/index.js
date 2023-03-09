@@ -30,7 +30,7 @@ function getOptions(word, jobList) {
 
 // отображает отфильтрованые данные под полем ввода и передаёт в input:
 function displayOptions() {
-    //console.log('this.value >>> ', this.value);
+    console.log('this.value >>> ', this.value);
     const options = getOptions(this.value, jobList);
     // console.log('options >>> ', options);
     const html = options
@@ -45,49 +45,44 @@ function displayOptions() {
         .join('');
     searchOptions.innerHTML = this.value ? html : null;
     searchOptions.classList.add('search__options_show');
-
-
-
-//с этим кодом нужно разбираться:
-    const jobElement = content.querySelector('.search__options_value');
     
+//отрабатывает клик передат в input:
+    const jobElement = content.querySelectorAll('.search__options_value');
+    jobElement.forEach(item => {
+        item.addEventListener('click', addElementInInput)
+    });
+   
     function addElementInInput() {
         const jobEl = content.querySelector('.search__options_value');
         let data = {
             id: jobEl.id,
             name: jobEl.textContent,
         }
-        console.log('data >>> ', data);
+        // console.log('data >>> ', data);
         const newInput = createInputVal(data);
         return newInput
     }
     function createInputVal(data) {
-        console.log('data.name >>> ', data.name);
+        // console.log('data.name >>> ', data.name);
         searchInput.value = data.name;
-        console.log('searchInputе >>> ', searchInput);
+        // console.log('searchInputе >>> ', searchInput);
     }
- 
-    
-    
-    jobElement.addEventListener('click', addElementInInput);
-    
-
 }
 
 //создаёт карточку:
 function createCard(data) {
-    const cardTemplate = document.querySelector('#list-template').content;
-    const card = cardTemplate.querySelector('.element').cloneNode(true);
-    const cardTitle = card.querySelector('.element__title');
-    cardTitle.textContent = data;
-    card.querySelector('.element__delete').addEventListener('click', deleteCard);
-    return card;
+        const cardTemplate = document.querySelector('#list-template').content;
+        const card = cardTemplate.querySelector('.element').cloneNode(true);
+        const cardTitle = card.querySelector('.element__title');
+        cardTitle.textContent = data;
+        card.querySelector('.element__delete').addEventListener('click', deleteCard);
+        card.querySelector('.element__save').addEventListener('click', saveCard);
+        return card;
 }
-
 function addElementInCard(evt) {
     evt.preventDefault();
     const data = searchInput.value;
-    console.log('data >>> ', data);
+    // console.log('data >>> ', data);
     const newCard = createCard(data);
     list.prepend(newCard);
     searchOptions.innerHTML = null;
@@ -101,6 +96,29 @@ function deleteCard(evt) {
     const selectedCard = evt.currentTarget.closest('.element');
     if (target.classList.contains('element__delete')) {
         selectedCard.remove();
+    }
+}
+
+//сохраняет карточку (отправляет данные в консоль):
+function saveCard(evt) {
+    evt.preventDefault();
+    const target = evt.target;
+    const selectedCard = evt.currentTarget.closest('.element');
+    const selectedSalary = selectedCard.querySelector('.element__salary');
+    // console.log('selectedSalary.value >>> ', selectedSalary.value);
+    if (target.classList.contains('element__save')) {
+        if(selectedSalary.value == '' || selectedSalary.value.length > 7){
+            console.log('Некорректно заполнено поле З/П');
+            selectedSalary.value == '';
+            selectedSalary.placeholder='Ошибка!';
+        } else {
+            let newData = {
+                rate_area_id: jobList.length+1,
+                base_charge_value: selectedSalary.value
+            };
+            console.log('Объект на сохранение : ', newData);
+        }
+        
     }
 }
 
