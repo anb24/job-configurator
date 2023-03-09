@@ -30,7 +30,7 @@ function getOptions(word, jobList) {
 
 // отображает отфильтрованые данные под полем ввода и передаёт в input:
 function displayOptions() {
-    console.log('this.value >>> ', this.value);
+    // console.log('this.value >>> ', this.value);
     const options = getOptions(this.value, jobList);
     // console.log('options >>> ', options);
     const html = options
